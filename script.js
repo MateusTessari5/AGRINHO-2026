@@ -1,37 +1,20 @@
-// script.js - Agrinho 2026
+// script.js - Agrinho 2026 (Versão Atualizada)
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('🚜 Agrinho 2026 - JavaScript carregado com sucesso!');
+    console.log('🌱 Agrinho 2026 - JavaScript carregado com sucesso!');
 
-    // ====================== SMOOTH SCROLL ======================
-    const navLinks = document.querySelectorAll('a[href^="#"]');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            const targetId = link.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                e.preventDefault();
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // ====================== MOBILE MENU ======================
+    // ====================== MENU MOBILE ======================
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('nav ul');
 
-    if (menuToggle) {
+    if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', () => {
             navMenu.classList.toggle('active');
             menuToggle.classList.toggle('active');
         });
     }
 
-    // Fechar menu ao clicar em um link (mobile)
+    // Fechar menu ao clicar em um link
+    const navLinks = document.querySelectorAll('nav a');
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             if (navMenu.classList.contains('active')) {
@@ -41,7 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ====================== FORMULÁRIO DE CONTATO ======================
+    // ====================== SMOOTH SCROLL ======================
+    navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            const targetId = link.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+            
+            if (targetSection) {
+                e.preventDefault();
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // ====================== FORMULÁRIO ======================
     const contactForm = document.getElementById('contact-form');
     
     if (contactForm) {
@@ -52,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const email = document.getElementById('email').value.trim();
             const mensagem = document.getElementById('mensagem').value.trim();
             
-            // Validação
             if (nome === '' || email === '' || mensagem === '') {
                 alert('❌ Por favor, preencha todos os campos obrigatórios!');
                 return;
@@ -67,44 +65,53 @@ document.addEventListener('DOMContentLoaded', () => {
             const submitButton = contactForm.querySelector('button');
             const originalText = submitButton.textContent;
             
-            submitButton.textContent = 'Enviando...';
+            submitButton.textContent = 'Enviando... 🌱';
             submitButton.disabled = true;
             
             setTimeout(() => {
-                alert('✅ Mensagem enviada com sucesso! Obrigado por participar do Agrinho 2026 🌱');
+                alert('✅ Mensagem enviada com sucesso!\n\nObrigado por participar do Agrinho 2026!');
                 contactForm.reset();
                 submitButton.textContent = originalText;
                 submitButton.disabled = false;
-            }, 1500);
+            }, 1800);
         });
     }
 
     function isValidEmail(email) {
-        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return regex.test(email);
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
     }
 
     // ====================== SCROLL ANIMATIONS ======================
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
             }
         });
-    }, {
-        threshold: 0.1
-    });
+    }, observerOptions);
 
-    const sections = document.querySelectorAll('section');
-    sections.forEach(section => {
+    document.querySelectorAll('section').forEach(section => {
         observer.observe(section);
     });
 
-    // ====================== BACK TO TOP ======================
+    // ====================== BACK TO TOP BUTTON ======================
     const backToTop = document.createElement('button');
-    backToTop.innerHTML = '↑';
     backToTop.classList.add('back-to-top');
+    backToTop.innerHTML = '↑';
     document.body.appendChild(backToTop);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 600) {
+            backToTop.style.display = 'flex';
+        } else {
+            backToTop.style.display = 'none';
+        }
+    });
 
     backToTop.addEventListener('click', () => {
         window.scrollTo({
@@ -113,31 +120,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 500) {
-            backToTop.style.display = 'flex';
-        } else {
-            backToTop.style.display = 'none';
-        }
-    });
-
     // ====================== KEYBOARD SUPPORT ======================
     document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const activeMenu = document.querySelector('nav ul.active');
-            if (activeMenu) {
-                activeMenu.classList.remove('active');
-                if (menuToggle) menuToggle.classList.remove('active');
-            }
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            navMenu.classList.remove('active');
+            if (menuToggle) menuToggle.classList.remove('active');
         }
     });
 
-    // ====================== HERO PARALLAX EFFECT ======================
+    // ====================== HERO PARALLAX ======================
     const hero = document.querySelector('.hero');
     if (hero) {
         window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            hero.style.backgroundPositionY = `${scrollY * 0.3}px`;
+            const scrollPosition = window.scrollY;
+            hero.style.backgroundPositionY = `${scrollPosition * 0.4}px`;
         });
     }
+
+    // Lazy loading nas imagens
+    document.querySelectorAll('img').forEach(img => {
+        if (!img.hasAttribute('loading')) {
+            img.loading = 'lazy';
+        }
+    });
 });
