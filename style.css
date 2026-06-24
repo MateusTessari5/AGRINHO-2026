@@ -1,103 +1,50 @@
-/* ====================== STYLE.CSS - AGRINHO 2026 ====================== */
-
-/* Reset e configurações gerais */
+/* styles.css - Agrinho 2026 */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    /* Cores principais do tema Agrinho 2026 */
-    --primary-green: #2E7D32;
-    --dark-green: #1B5E20;
-    --light-green: #81C784;
-    --accent-yellow: #FBC02D;
-    --earth-brown: #5D4037;
-    --text-dark: #263238;
-    --text-light: #F5F5F5;
-    --white: #FFFFFF;
-    --gray: #757575;
-}
-
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var(--text-dark);
-    background-color: #f8fff8;
-    overflow-x: hidden;
+    color: #333;
+    background-color: #f8f9fa;
 }
 
-/* Tipografia */
-h1, h2, h3, h4, h5, h6 {
-    font-weight: 700;
-    color: var(--dark-green);
-    line-height: 1.3;
-}
-
-h1 {
-    font-size: 2.8rem;
-}
-
-h2 {
-    font-size: 2.2rem;
-}
-
-p {
-    font-size: 1.1rem;
-    color: #444;
-}
-
-/* Container principal */
 .container {
-    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Cabeçalho */
+/* HEADER */
 header {
-    background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+    background: linear-gradient(135deg, #2e7d32, #4caf50);
     color: white;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-.header-content {
+header .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 1rem 0;
-}
-
-.logo {
-    display: flex;
     align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: white;
+    padding: 1rem 20px;
 }
 
-.logo img {
-    height: 70px;
-    width: auto;
-}
-
-.logo-text h1 {
+.logo h1 {
     font-size: 1.8rem;
-    margin: 0;
+    font-weight: 700;
 }
 
-.logo-text p {
-    font-size: 0.9rem;
-    opacity: 0.95;
-    margin: 0;
+.logo span {
+    color: #ffeb3b;
 }
 
-/* Navegação */
 nav ul {
     display: flex;
     list-style: none;
@@ -108,118 +55,238 @@ nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
-    transition: all 0.3s;
-    position: relative;
+    transition: color 0.3s;
 }
 
 nav a:hover {
-    color: var(--accent-yellow);
+    color: #ffeb3b;
 }
 
-nav a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: var(--accent-yellow);
-    transition: width 0.3s;
-}
-
-nav a:hover::after {
-    width: 100%;
-}
-
-/* Botão */
-.btn {
-    display: inline-block;
-    padding: 12px 28px;
-    background: var(--accent-yellow);
-    color: var(--text-dark);
-    font-weight: 700;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s;
+.menu-toggle {
+    display: none;
+    background: none;
     border: none;
+    color: white;
+    font-size: 1.8rem;
     cursor: pointer;
 }
 
-.btn:hover {
-    background: #FFD700;
-    transform: translateY(-3px);
-    box-shadow: 0 8px 15px rgba(251, 192, 45, 0.3);
-}
-
-/* Seções */
-section {
-    padding: 80px 0;
-}
-
+/* HERO */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../img/hero-agrinho.jpg');
+    height: 100vh;
+    background-image: url('assets/hero-agrinho.jpg');
     background-size: cover;
     background-position: center;
-    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 160px 0 120px;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
 }
 
 .hero h1 {
-    color: white;
     font-size: 3.5rem;
     margin-bottom: 1rem;
-    text-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+}
+
+.hero h1 span {
+    color: #ffeb3b;
 }
 
 .hero p {
     font-size: 1.4rem;
-    max-width: 700px;
-    margin: 0 auto 2rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
-/* Responsividade */
+.btn {
+    display: inline-block;
+    background: #ffeb3b;
+    color: #2e7d32;
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    background: #fff176;
+}
+
+/* SEÇÕES GERAIS */
+.section {
+    padding: 100px 0;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    color: #2e7d32;
+}
+
+/* GALERIA */
+.galeria {
+    background: #e8f5e9;
+    text-align: center;
+}
+
+.imagem-destaque {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    margin: 20px auto;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+/* FORMULÁRIO */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2e7d32;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+form button {
+    background: #2e7d32;
+    color: white;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+form button:hover {
+    background: #1b5e20;
+    transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+    background: #1b5e20;
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.8rem;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* RESPONSIVO */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.3rem;
-    }
-    
-    .header-content {
-        flex-direction: column;
-        gap: 1rem;
+    .menu-toggle {
+        display: block;
     }
     
     nav ul {
-        gap: 1.2rem;
-        font-size: 1rem;
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #2e7d32;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding-top: 3rem;
+        transition: 0.4s;
     }
     
-    .hero {
-        padding: 120px 0 100px;
+    nav ul.active {
+        left: 0;
     }
     
     .hero h1 {
         font-size: 2.8rem;
     }
-}
-
-/* Estilos adicionais (serão incrementados conforme as seções) */
-.card {
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.4s;
-}
-
-.card:hover {
-    transform: translateY(-12px);
-}
-
-/* Footer */
-footer {
-    background: var(--dark-green);
-    color: white;
-    padding: 60px 0 30px;
-    text-align: center;
 }
