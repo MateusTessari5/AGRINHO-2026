@@ -3,136 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGRINHO 2026 | Agro Forte, Futuro Sustentável</title>
-    <meta name="description" content="Equilíbrio entre produção agrícola e preservação ambiental">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #2e7d32;
-            --secondary: #81c784;
-            --dark: #1b5e20;
-            --light: #f1f8e9;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-        
-        header {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad3b6?w=1920') center/cover no-repeat;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-        }
-        
-        .btn {
-            display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 14px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-        
-        .btn:hover {
-            background: #1b5e20;
-            transform: translateY(-3px);
-        }
-        
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255,255,255,0.95);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 5%;
-        }
-        
-        .logo {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-        }
-    </style>
+    <title>Agrinho 2026 | Agro que Alimenta, Gente que Cuida</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navegação -->
-    <nav>
-        <div class="nav-content container">
-            <div class="logo">AGRINHO <span style="color:#81c784;">2026</span></div>
-            <div>
-                <a href="#sobre" style="margin: 0 15px; text-decoration: none; color: #333;">Sobre</a>
-                <a href="#producao" style="margin: 0 15px; text-decoration: none; color: #333;">Produção</a>
-                <a href="#sustentabilidade" style="margin: 0 15px; text-decoration: none; color: #333;">Sustentabilidade</a>
-                <a href="#contato" style="margin: 0 15px; text-decoration: none; color: #333;">Contato</a>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
+    <!-- HEADER -->
     <header>
         <div class="container">
-            <h1>Agro Forte,<br>Futuro Sustentável</h1>
-            <p class="subtitle">Equilíbrio entre produção e meio ambiente</p>
-            <a href="#sobre" class="btn">Conheça o Projeto</a>
+            <div class="logo">
+                <h1>🌱 AGRINHO <span>2026</span></h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#atividades">Atividades</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+                <button class="menu-toggle">☰</button>
+            </nav>
         </div>
     </header>
 
-    <!-- Seção Sobre -->
-    <section id="sobre" style="padding: 100px 0; background: var(--light);">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 60px; font-size: 2.5rem; color: var(--dark);">Nosso Propósito</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.2rem;">
-                Desenvolver uma agricultura forte, moderna e consciente, que garanta produção de alimentos 
-                de qualidade enquanto preserva os recursos naturais para as futuras gerações.
-            </p>
+    <!-- HERO -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Agro que Alimenta,<br><span>Gente que Cuida</span></h1>
+            <p>Participe do concurso Agrinho 2026 e ajude a construir um futuro mais sustentável!</p>
+            <a href="#contato" class="btn">Inscreva-se agora</a>
         </div>
     </section>
 
-    <!-- Você pode continuar adicionando mais seções aqui -->
+    <!-- SOBRE -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <h2>Sobre o Agrinho 2026</h2>
+            <div class="sobre-content">
+                <p>O Agrinho é um projeto educativo que conecta crianças e adolescentes ao mundo do agronegócio sustentável, meio ambiente e alimentação saudável. Em 2026, o tema reforça a importância da união entre o campo e a cidade.</p>
+            </div>
+        </div>
+    </section>
 
-    <footer style="background: var(--dark); color: white; text-align: center; padding: 40px 20px;">
-        <p>&copy; 2026 AGRINHO - Agro Forte, Futuro Sustentável</p>
+    <!-- GALERIA -->
+    <section id="galeria" class="section galeria">
+        <div class="container">
+            <h2>Agro que Alimenta, Gente que Cuida</h2>
+            <img src="assets/galeria-sustentabilidade.jpg" 
+                 alt="Crianças aprendendo sobre agricultura sustentável - Agrinho 2026" 
+                 class="imagem-destaque">
+        </div>
+    </section>
+
+    <!-- ATIVIDADES -->
+    <section id="atividades" class="section">
+        <div class="container">
+            <h2>Atividades Educativas</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>🌱 Plantio Consciente</h3>
+                    <p>Aprenda a plantar e cuidar de hortas escolares.</p>
+                </div>
+                <div class="card">
+                    <h3>🐄 Conheça o Campo</h3>
+                    <p>Visitas virtuais e presenciais a propriedades rurais.</p>
+                </div>
+                <div class="card">
+                    <h3>♻️ Sustentabilidade</h3>
+                    <p>Projetos de reciclagem e preservação da água.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contato" class="section">
+        <div class="container">
+            <h2>Participe!</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="nome">Nome completo *</label>
+                    <input type="text" id="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail *</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="mensagem">Mensagem / Dúvida *</label>
+                    <textarea id="mensagem" rows="5" required></textarea>
+                </div>
+                <button type="submit">Enviar Participação</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Agrinho - Todos os direitos reservados</p>
+            <p>Desenvolvido com ❤️ por alunos e educadores</p>
+        </div>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
