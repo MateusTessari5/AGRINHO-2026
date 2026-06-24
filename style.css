@@ -1,13 +1,3 @@
-/* ====================== STYLE.CSS - AGRINHO 2026 ====================== */
-
-:root {
-    --primary: #2e7d32;
-    --secondary: #81c784;
-    --dark: #1b5e20;
-    --light: #f1f8e9;
-    --accent: #fbc02d;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -15,53 +5,72 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.6;
     color: #333;
-    overflow-x: hidden;
+    background: #f8f9fa;
 }
 
-/* Google Fonts já importado no HTML */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-/* Navegação */
-nav {
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #1e6b24, #4caf50);
+    color: white;
     position: fixed;
-    top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
-.nav-content {
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 1rem 20px;
 }
 
-.logo {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--primary);
+.logo h1 {
+    font-size: 2.2rem;
+    font-family: 'Playfair Display', serif;
+}
+
+.logo span {
+    color: #ffeb3b;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
 }
 
 nav a {
-    margin: 0 15px;
+    color: white;
     text-decoration: none;
-    color: #333;
-    font-weight: 500;
-    transition: color 0.3s;
+    font-weight: 600;
+    transition: 0.3s;
 }
 
 nav a:hover {
-    color: var(--primary);
+    color: #ffeb3b;
 }
 
-/* Hero Section */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+/* HERO */
 .hero {
     height: 100vh;
     background-image: url('./assets/hero-agrinho.jpg');
@@ -75,84 +84,196 @@ nav a:hover {
     position: relative;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.35), rgba(30,107,36,0.45));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
     padding: 0 20px;
 }
 
-h1 {
-    font-family: 'Poppins', sans-serif;
-    font-size: 3.5rem;
+.hero h1 {
+    font-size: 4rem;
     margin-bottom: 1rem;
-    line-height: 1.1;
+    text-shadow: 0 5px 20px rgba(0,0,0,0.7);
+    font-family: 'Playfair Display', serif;
 }
 
-.subtitle {
+.hero h1 span {
+    color: #ffeb3b;
+    display: block;
+}
+
+.hero p {
     font-size: 1.5rem;
-    margin-bottom: 2rem;
-    opacity: 0.95;
+    margin-bottom: 2.5rem;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.6);
 }
 
 .btn {
-    display: inline-block;
-    background: var(--primary);
-    color: white;
-    padding: 14px 32px;
+    background: #ffeb3b;
+    color: #1e6b24;
+    padding: 16px 45px;
     border-radius: 50px;
+    font-size: 1.25rem;
+    font-weight: 700;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s;
+    display: inline-block;
+    transition: 0.4s;
 }
 
 .btn:hover {
-    background: var(--dark);
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+    transform: scale(1.08) translateY(-5px);
+    box-shadow: 0 15px 30px rgba(255, 235, 59, 0.4);
 }
 
-/* Seções */
-section {
-    padding: 100px 0;
+/* SEÇÕES */
+.section {
+    padding: 110px 0;
 }
 
-#sobre {
-    background: var(--light);
-}
-
-h2 {
+.section h2 {
     text-align: center;
-    margin-bottom: 60px;
-    font-size: 2.5rem;
-    color: var(--dark);
-    font-family: 'Poppins', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    color: #1e6b24;
 }
 
-/* Footer */
+.sobre-texto {
+    text-align: center;
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* GALERIA */
+.galeria {
+    background: #e8f5e9;
+    text-align: center;
+}
+
+.imagem-destaque {
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+    margin: 30px auto;
+    display: block;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.card-icon {
+    font-size: 3.8rem;
+    margin-bottom: 1rem;
+}
+
+/* FORMULÁRIO */
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 25px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #1e6b24;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+form button {
+    background: #1e6b24;
+    color: white;
+    padding: 16px 50px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+form button:hover {
+    background: #2e7d32;
+    transform: scale(1.03);
+}
+
+/* FOOTER */
 footer {
-    background: var(--dark);
+    background: #1e6b24;
     color: white;
     text-align: center;
-    padding: 40px 20px;
-    font-size: 1.1rem;
+    padding: 3rem 0;
 }
 
-/* Responsividade */
+/* RESPONSIVO */
 @media (max-width: 768px) {
-    h1 {
-        font-size: 2.8rem;
+    .menu-toggle { display: block; }
+    nav ul {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: #1e6b24;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 3rem;
+        transition: 0.4s;
     }
+    nav ul.active { left: 0; }
     
-    .subtitle {
-        font-size: 1.3rem;
-    }
-    
-    nav a {
-        margin: 0 10px;
-        font-size: 0.95rem;
-    }
-    
-    .nav-content {
-        padding: 1rem 5%;
-    }
+    .hero h1 { font-size: 2.8rem; }
+    .hero p { font-size: 1.2rem; }
 }
