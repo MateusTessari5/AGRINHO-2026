@@ -3,111 +3,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agrinho 2026 - Concurso que une educação, sustentabilidade e o futuro do campo brasileiro. Participe!">
+    <meta name="keywords" content="Agrinho, sustentabilidade, educação, campo, agronegócio, concurso escolar">
+    <meta name="author" content="Agrinho 2026">
+    
+    <!-- Open Graph para redes sociais -->
+    <meta property="og:title" content="Agrinho 2026 | Agro que Alimenta, Gente que Cuida">
+    <meta property="og:description" content="Uma jornada pela sustentabilidade e pelo futuro do nosso campo">
+    <meta property="og:image" content="./assets/og-image.jpg">
+    <meta property="og:type" content="website">
+    
     <title>Agrinho 2026 | Agro que Alimenta, Gente que Cuida</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
 </head>
 <body>
-
     <!-- HEADER -->
-    <header>
+    <header class="header" id="header">
         <div class="container">
             <div class="logo">
-                <h1>🌱 AGRINHO <span>2026</span></h1>
+                <h1 class="logo-text">🌱 AGRINHO <span class="logo-year">2026</span></h1>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#galeria">Galeria</a></li>
-                    <li><a href="#atividades">Atividades</a></li>
-                    <li><a href="#contato">Contato</a></li>
+            <nav class="navbar" aria-label="Menu principal">
+                <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
+                    <span class="hamburger"></span>
+                </button>
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Início</a></li>
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#galeria" class="nav-link">Galeria</a></li>
+                    <li><a href="#atividades" class="nav-link">Atividades</a></li>
+                    <li><a href="#contato" class="nav-link btn-nav">Participe</a></li>
                 </ul>
-                <button class="menu-toggle">☰</button>
             </nav>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Agro que Alimenta,<br><span>Gente que Cuida</span></h1>
-            <p>Concurso Agrinho 2026 • Uma jornada pela sustentabilidade e pelo futuro do nosso campo</p>
-            <a href="#contato" class="btn">Quero Participar!</a>
-        </div>
-    </section>
-
-    <!-- SOBRE -->
-    <section id="sobre" class="section">
-        <div class="container">
-            <h2>Sobre o Agrinho 2026</h2>
-            <p class="sobre-texto">Um projeto que une crianças, escolas e o campo para construir um Brasil mais consciente, sustentável e alimentado com carinho.</p>
-        </div>
-    </section>
-
-    <!-- GALERIA -->
-    <section id="galeria" class="section galeria">
-        <div class="container">
-            <h2>🌾 Nossa História em Imagens</h2>
-            <img src="./assets/galeria-sustentabilidade.jpg" 
-                 alt="Crianças no campo - Agrinho 2026" 
-                 class="imagem-destaque">
-        </div>
-    </section>
-
-    <!-- ATIVIDADES -->
-    <section id="atividades" class="section">
-        <div class="container">
-            <h2>Atividades Incríveis</h2>
-            <div class="cards">
-                <div class="card">
-                    <div class="card-icon">🌱</div>
-                    <h3>Plantio Consciente</h3>
-                    <p>Hortas escolares e cuidados com a terra</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">🐄</div>
-                    <h3>Conheça o Campo</h3>
-                    <p>Visitas e histórias do agronegócio brasileiro</p>
-                </div>
-                <div class="card">
-                    <div class="card-icon">♻️</div>
-                    <h3>Sustentabilidade</h3>
-                    <p>Água, reciclagem e preservação da natureza</p>
+    <main>
+        <!-- HERO -->
+        <section id="home" class="hero">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <span class="hero-badge">🌾 Concurso Agrinho 2026</span>
+                    <h1 class="hero-title">
+                        Agro que Alimenta,<br>
+                        <span class="hero-highlight">Gente que Cuida</span>
+                    </h1>
+                    <p class="hero-description">
+                        Uma jornada pela sustentabilidade e pelo futuro do nosso campo
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="#contato" class="btn btn-primary">Quero Participar!</a>
+                        <a href="#sobre" class="btn btn-secondary">Saiba Mais</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="scroll-indicator">
+                <span class="scroll-arrow"></span>
+            </div>
+        </section>
 
-    <!-- CONTATO -->
-    <section id="contato" class="section">
-        <div class="container">
-            <h2>Participe do Agrinho 2026!</h2>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="nome">Nome completo *</label>
-                    <input type="text" id="nome" required>
+        <!-- SOBRE -->
+        <section id="sobre" class="section section-sobre">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Conheça o projeto</span>
+                    <h2 class="section-title">Sobre o Agrinho 2026</h2>
                 </div>
-                <div class="form-group">
-                    <label for="email">E-mail *</label>
-                    <input type="email" id="email" required>
+                <div class="sobre-grid">
+                    <div class="sobre-texto">
+                        <p class="lead">Um projeto que une crianças, escolas e o campo para construir um Brasil mais consciente, sustentável e alimentado com carinho.</p>
+                        <p>O Agrinho é o maior programa de responsabilidade social do Sistema FAEP/SENAR-PR, levando educação ambiental e alimentar para milhares de estudantes.</p>
+                        <div class="stats">
+                            <div class="stat">
+                                <span class="stat-number">500K+</span>
+                                <span class="stat-label">Estudantes</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">3K+</span>
+                                <span class="stat-label">Escolas</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number">300+</span>
+                                <span class="stat-label">Cidades</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sobre-imagem">
+                        <img src="./assets/sobre-agrinho.jpg" alt="Estudantes participando de atividades do Agrinho" loading="lazy">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="mensagem">Mensagem ou Dúvida *</label>
-                    <textarea id="mensagem" rows="5" required></textarea>
+            </div>
+        </section>
+
+        <!-- GALERIA -->
+        <section id="galeria" class="section section-galeria">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">Nossa história</span>
+                    <h2 class="section-title">🌾 Galeria de Momentos</h2>
                 </div>
-                <button type="submit">Enviar Inscrição 🌱</button>
-            </form>
-        </div>
-    </section>
+                <div class="galeria-grid">
+                    <div class="galeria-item galeria-destaque">
+                        <img src="./assets/galeria-sustentabilidade.jpg" alt="Crianças no campo - Agrinho 2026" loading="lazy">
+                        <div class="galeria-caption">
+                            <h3>Sustentabilidade no Campo</h3>
+                            <p>Práticas que preservam o futuro</p>
+                        </div>
+                    </div>
+                    <div class="galeria-item">
+                        <img src="./assets/galeria-horta.jpg" alt="Horta escolar" loading="lazy">
+                        <div class="galeria-caption">
+                            <h3>Hortas Escolares</h3>
+                        </div>
+                    </div>
+                    <div class="galeria-item">
+                        <img src="./assets/galeria-vacina.jpg" alt="Cuidado com animais" loading="lazy">
+                        <div class="galeria-caption">
+                            <h3>Cuidado Animal</h3>
+                        </div>
+                    </div>
+                    <div class="galeria-item">
+                        <img src="./assets/galeria-reciclagem.jpg" alt="Reciclagem" loading="lazy">
+                        <div class="galeria-caption">
+                            <h3>Reciclagem</h3>
+                        </div>
+                    </div>
+                    <div class="galeria-item">
+                        <img src="./assets/galeria-agua.jpg" alt="Preservação da água" loading="lazy">
+                        <div class="galeria-caption">
+                            <h3>Água Limpa</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ATIVIDADES -->
+        <section id="atividades" class="section section-atividades">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-subtitle">O que oferecemos</span>
+                    <h2 class="section-title">Atividades Incríveis</h2>
+                </div>
+                <div class="cards-grid">
+                    <article class="card card-plantio">
+                        <div class="card-image">
+                            <img src="./assets/card-plantio.jpg" alt="Plantio consciente" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-icon">🌱</div>
+                            <h3>Plantio Consciente</h3>
+                            <p>Hortas escolares e cuidados com a terra. Aprenda a cultivar alimentos saudáveis e sustentáveis.</p>
+                            <a href="#contato" class="card-link">Saiba mais →</a>
+                        </div>
+                    </article>
+                    <article class="card card-campo">
+                        <div class="card-image">
+                            <img src="./assets/card-campo.jpg" alt="Conheça o campo" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-icon">🐄</div>
+                            <h3>Conheça o Campo</h3>
+                            <p>Visitas e histórias do agronegócio brasileiro. Descubra de onde vêm os alimentos que chegam à sua mesa.</p>
+                            <a href="#contato" class="card-link">Saiba mais →</a>
+                        </div>
+                    </article>
+                    <article class="card card-sustentabilidade">
+                        <div class="card-image">
+                            <img src="./assets/card-sustentabilidade.jpg" alt="Sustentabilidade" loading="lazy">
+                        </div>
+                        <div class="card-content">
+                            <div class="card-icon">♻️</div>
+                            <h3>Sustentabilidade</h3>
+                            <p>Água, reciclagem e preservação da natureza. Práticas que garantem um futuro melhor para todos.</p>
+                            <a href="#contato" class="card-link">Saiba mais →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="section section-contato">
+            <div class="container">
+                <div class="contato-wrapper">
+                    <div class="contato-info">
+                        <span class="section-subtitle">Fale conosco</span>
+                        <h2 class="section-title">Participe do Agrinho 2026!</h2>
+                        <p>Preencha o formulário e nossa equipe entrará em contato com você para orientar sobre a participação.</p>
+                        <div class="contato-detalhes">
+                            <div class="contato-item">
+                                <span class="icon">📧</span>
+                                <div>
+                                    <h4>E-mail</h4>
+                                    <p>contato@agrinho2026.com.br</p>
+                                </div>
+                            </div>
+                            <div class="contato-item">
+                                <span class="icon">📞</span>
+                                <div>
+                                    <h4>Telefone</h4>
+                                    <p>(41) 3000-0000</p>
+                                </div>
+                            </div>
+                            <div class="contato-item">
+                                <span class="icon">📍</span>
+                                <div>
+                                    <h4>Localização</h4>
+                                    <p>Curitiba - PR</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contato-form">
+                        <form id="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="nome">Nome completo *</label>
+                                <input type="text" id="nome" name="nome" required placeholder="Seu nome completo">
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                                <span class="error-message"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="escola">Escola</label>
+                                <input type="text" id="escola" name="escola" placeholder="Nome da sua escola">
+                            </div>
+                            <div class="form-group">
+                                <label for="mensagem">Mensagem ou Dúvida *</label>
+                                <textarea id="mensagem" name="mensagem" rows="5" required placeholder="Como podemos ajudar?"></textarea>
+                                <span class="error-message"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full">Enviar Inscrição 🌱</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Agrinho - Todos os direitos reservados</p>
-            <p>Feito com ❤️ para um futuro mais verde</p>
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>🌱 AGRINHO <span>2026</span></h3>
+                    <p>Agro que Alimenta, Gente que Cuida. Construindo um futuro mais verde e consciente.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">📘</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#atividades">Atividades</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Regulamento</a></li>
+                        <li><a href="#">Materiais Educativos</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Política de Privacidade</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Agrinho - Todos os direitos reservados</p>
+                <p>Feito com ❤️ para um futuro mais verde</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Botão voltar ao topo -->
+    <button id="back-to-top" class="back-to-top" aria-label="Voltar ao topo">
+        ↑
+    </button>
 
     <script src="script.js" defer></script>
 </body>
