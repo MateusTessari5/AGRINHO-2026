@@ -143,14 +143,17 @@ section.show, .card.show, .galeria-item.show { opacity: 1; transform: translateY
 .menu-toggle.active .hamburger:nth-child(2) { opacity: 0; }
 .menu-toggle.active .hamburger:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
 
-/* ====== HERO ====== */
+/* ============================================
+   🌟 HERO - AGORA COM SUA IMAGEM hero-agrinho.jpg
+   ============================================ */
 .hero {
     min-height: 100vh;
     background-image: linear-gradient(rgba(27, 94, 32, 0.7), rgba(46, 125, 50, 0.8)),
-                      url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?w=1600');
+                      url('./assets/hero-agrinho.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -573,6 +576,9 @@ section.show, .card.show, .galeria-item.show { opacity: 1; transform: translateY
     }
     
     .nav-list.active { right: 0; }
+    
+    /* Desativa parallax no mobile (melhora performance) */
+    .hero { background-attachment: scroll; }
     
     .hero-title { font-size: 2.5rem; }
     .hero-description { font-size: 1.1rem; }
