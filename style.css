@@ -143,9 +143,7 @@ section.show, .card.show, .galeria-item.show { opacity: 1; transform: translateY
 .menu-toggle.active .hamburger:nth-child(2) { opacity: 0; }
 .menu-toggle.active .hamburger:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
 
-/* ============================================
-   🌟 HERO - AGORA COM SUA IMAGEM hero-agrinho.jpg
-   ============================================ */
+/* ====== HERO (com sua imagem hero-agrinho.jpg) ====== */
 .hero {
     min-height: 100vh;
     background-image: linear-gradient(rgba(27, 94, 32, 0.7), rgba(46, 125, 50, 0.8)),
@@ -270,7 +268,7 @@ section.show, .card.show, .galeria-item.show { opacity: 1; transform: translateY
     font-weight: 700;
 }
 
-/* ====== SOBRE ====== */
+/* ====== SOBRE (com sua imagem image.jpg) ====== */
 .section-sobre { background: linear-gradient(135deg, var(--cinza-claro) 0%, var(--branco) 100%); }
 
 .sobre-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
@@ -285,18 +283,6 @@ section.show, .card.show, .galeria-item.show { opacity: 1; transform: translateY
     box-shadow: var(--shadow-lg);
     min-height: 400px;
     background: linear-gradient(135deg, var(--verde-claro), var(--verde-primario));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 5rem;
-}
-
-.sobre-imagem::before {
-    content: '🌾';
-    position: absolute;
-    font-size: 10rem;
-    opacity: 0.3;
 }
 
 .sobre-imagem img {
@@ -307,6 +293,18 @@ section.show, .card.show, .galeria-item.show { opacity: 1; transform: translateY
 }
 
 .sobre-imagem:hover img { transform: scale(1.05); }
+
+.sobre-imagem::after {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 3px solid var(--amarelo-dourado);
+    border-radius: var(--radius-lg);
+    pointer-events: none;
+}
 
 .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
 
@@ -339,13 +337,13 @@ section.show, .card.show, .galeria-item.show { opacity: 1; transform: translateY
     letter-spacing: 1px;
 }
 
-/* ====== GALERIA ====== */
+/* ====== GALERIA (com nova imagem C7M7f.jpg) ====== */
 .section-galeria { background: var(--verde-suave); }
 
 .galeria-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 250px);
+    grid-template-rows: repeat(3, 250px);
     gap: 1rem;
 }
 
@@ -577,7 +575,7 @@ section.show, .card.show, .galeria-item.show { opacity: 1; transform: translateY
     
     .nav-list.active { right: 0; }
     
-    /* Desativa parallax no mobile (melhora performance) */
+    /* Desativa parallax no mobile */
     .hero { background-attachment: scroll; }
     
     .hero-title { font-size: 2.5rem; }
@@ -595,4 +593,6 @@ section.show, .card.show, .galeria-item.show { opacity: 1; transform: translateY
     .footer-grid { grid-template-columns: 1fr; }
     .footer-brand { grid-column: span 1; }
     .section { padding: 4rem 0; }
+    
+    .sobre-imagem::after { display: none; }
 }
